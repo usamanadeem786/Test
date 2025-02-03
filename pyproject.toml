@@ -1,0 +1,254 @@
+[tool.mypy]
+plugins = ["sqlalchemy.ext.mypy.plugin", "pydantic.mypy"]
+warn_unused_ignores = true
+
+[[tool.mypy.overrides]]
+module = "furl.*"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "jwcrypto.*"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "uvicorn"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "uvicorn.logging.*"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "postmarker.*"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "sendgrid.*"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "dramatiq.*"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "asyncpg.*"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "pymysql.*"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "pycountry.*"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "sentry_dramatiq.*"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "wtforms.*"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "apscheduler.*"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "sqlalchemy_utils.*"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "posthog.*"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "python_http_client.*"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "bs4.*"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "attr.*"
+ignore_missing_imports = true
+
+[tool.ruff]
+target-version = "py311"
+
+[tool.ruff.lint]
+extend-select = ["I", "TRY", "UP"]
+ignore = ["E501"]
+per-file-ignores = { "conftest.py" = ["E731"], "tests/*" = ["TRY"], "auth/repositories/*" = ["E711", "E712"], "auth/alembic/*" = ["F401"] }
+
+[tool.coverage.run]
+concurrency = ["thread", "gevent"]
+omit = ["auth/alembic/*"]
+
+[tool.pytest.ini_options]
+addopts = "-n auto --cov auth/ --cov-report=term-missing"
+markers = ["test_data", "access_token", "authenticated_admin", "htmx"]
+asyncio_mode = "strict"
+
+#######################################
+# Project metadata & runtime settings #
+#######################################
+
+[project]
+name = "auth-server"
+# Version is set dynamically via a versioning plugin:
+dynamic = ["version"]
+version = "0.0.0"  # Placeholder; actual version determined dynamically.
+authors = [
+  { name = "Abdul Rehman", email = "contact@auth.dev" }
+]
+description = "Users and authentication management SaaS"
+readme = "README.md"
+classifiers = [
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3 :: Only"
+]
+requires-python = ">=3.12"
+dependencies = [
+  "aiomysql==0.2.0",
+  "aiosqlite==0.20.0",
+  "alembic==1.14.0",
+  "apscheduler==3.10.4",
+  "argon2_cffi==23.1.0",
+  "asgi-babel==0.10.0",
+  "asyncpg==0.30.0",
+  "dramatiq[redis]==1.17.1",
+  "email_validator==2.2.0",
+  "furl==2.1.3",
+  "httpx-oauth==0.15.1",
+  "itsdangerous==2.2.0",
+  "Jinja2==3.1.4",
+  "jwcrypto==1.5.6",
+  "loguru==0.7.2",
+  "phonenumbers>=8.12.48,<8.14",
+  "posthog>=3.0.1,<4",
+  "postmarker==1.0",
+  "pydantic==2.9.2",
+  "python-multipart==0.0.17",
+  "pydantic-settings==2.6.1",
+  "pwdlib[argon2,bcrypt]==0.2.1",
+  "sendgrid==6.11.0",
+  "psycopg2-binary==2.9.10",
+  "pycountry>=23,<25",
+  "python-slugify==8.0.4",
+  "pytz==2024.2",
+  "rich==13.9.4",
+  "sentry_dramatiq==0.3.3",
+  "sentry-sdk==2.18.0",
+  "sqlalchemy[mypy]==2.0.36",
+  "sqlalchemy-utils==0.41.2",
+  "typer==0.12.5",
+  "uvicorn[standard]==0.32.0",
+  "WTForms==3.2.1",
+  "zxcvbn-rs-py==0.1.1 ; python_version >= '3.12' and python_version < '3.13'",
+  "coverage[toml]==7.6.10",
+  "auth-client @ file:///Users/ardev/Work/hilal/projects/auth/code/auth/packages/auth_client-0.1.0-py3-none-any.whl"
+]
+
+[project.scripts]
+auth = "auth.cli.__main__:app"
+
+[project.urls]
+Documentation = "https://docs.auth.dev"
+Source = "https://github.com/auth-dev/auth"
+
+#####################################################
+# Poetry-specific settings (non-PEP 621 extensions) #
+#####################################################
+
+[tool.poetry]
+package-mode = false
+
+# Include additional non-code files in the built package.
+include = [
+  "auth/py.typed",
+  "auth/alembic.ini",
+  "auth/locale/**/*",
+  "auth/static/**/*",
+  "auth/templates/**/*",
+  "auth/services/email_template/templates/**/*"
+]
+
+[tool.poetry.group.dev.dependencies]
+asgi-lifespan = "*"
+beautifulsoup4 = "*"
+gevent = "*"
+httpx = "*"
+libcst = "*"
+mypy = "*"
+pytest = "*"
+pytest-cov = "*"
+pytest-asyncio = ">=0.21,<0.22"
+pytest-mock = "*"
+pytest-xdist = "*"
+respx = "*"
+ruff = "*"
+types-python-slugify = "*"
+types-pytz = "*"
+
+#####################################
+# Dynamic versioning configuration  #
+#####################################
+poethepoet = "^0.32.2"
+
+[tool.poetry-dynamic-versioning]
+enable = true
+# Adjust further options if you wish to mimic your previous regex_commit setup.
+
+###############################
+# Tasks (via a Poetry tasks runner, e.g. poethepoet) #
+###############################
+
+[tool.poe.tasks]
+test = { cmd = "pytest {args}" }
+test-cov-xml = { cmd = "pytest --cov auth/ --cov-report=xml --exitfirst" }
+lint = { cmds = [ "ruff format .", "ruff check --fix .", "mypy auth/" ] }
+lint-check = { cmds = [ "ruff format --check .", "ruff check .", "mypy auth/" ] }
+translations.add = { cmds = [
+  "mkdir -p auth/locale/{args}/LC_MESSAGES",
+  "touch auth/locale/{args}/LC_MESSAGES/messages.po",
+  "poe translations.update"
+] }
+translations.update = { cmds = [
+  "pybabel extract --mapping babel.cfg --output-file=auth/locale/messages.pot .",
+  "pybabel update --domain=messages --input-file=auth/locale/messages.pot --output-dir=auth/locale"
+] }
+translations.compile = { cmd = "pybabel compile --domain=messages --directory=auth/locale" }
+static.build = { cmd = "npm run build" }
+migrations.create = { cmds = [
+  "docker compose up -d db",
+  "env GENERATE_MIGRATION=1 alembic -c auth/alembic.ini revision --autogenerate -m {args}"
+] }
+migrations.migrate = { cmds = [
+  "docker compose up -d db",
+  "env GENERATE_MIGRATION=1 alembic -c auth/alembic.ini upgrade head"
+] }
+telemetry.set-posthog-key = { cmds = [
+  "sed -i.bak 's/__POSTHOG_API_KEY__/{args}/' auth/services/posthog.py",
+  "rm auth/services/posthog.py.bak"
+] }
+dev.env.start = { cmd = "docker compose up -d" }
+dev.env.stop = { cmd = "docker compose stop" }
+dev.server.start = { cmds = [
+  "poe translations.compile",
+  "poe static.build",
+  "uvicorn --host 0.0.0.0 --port 8000 auth.app:app"
+] }
+dev.server.watch = { cmd = "watchfiles --ignore-paths auth/static,auth/locale 'poe dev.server.start' auth js styles" }
+dev.worker.start = { cmd = "dramatiq auth.worker -p 1 -t 1 -f auth.scheduler:schedule" }
+dev.worker.watch = { cmd = "watchfiles --ignore-paths auth/static,auth/locale 'poe dev.worker.start' auth" }
+
+#############################
+# Build system configuration #
+#############################
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

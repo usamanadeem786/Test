@@ -1,0 +1,429 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: Auth\n"
+"Language: pl\n"
+
+#: auth/templates/auth/login.html:7
+msgid "Welcome back!"
+msgstr "Witaj spowrotem!"
+
+#: auth/apps/auth/forms/auth.py:9 auth/apps/auth/forms/profile.py:14
+#: auth/apps/auth/forms/register.py:15 auth/apps/auth/forms/reset.py:9
+msgid "Email address"
+msgstr "Adres email"
+
+#: auth/apps/auth/forms/auth.py:11 auth/forms.py:358
+#: auth/templates/auth/dashboard/password.html:7
+#: auth/templates/auth/dashboard/sidebar.html:40
+msgid "Password"
+msgstr "Hasło"
+
+#: auth/templates/auth/login.html:5 auth/templates/auth/login.html:30
+msgid "Sign in"
+msgstr "Zaloguj się"
+
+#: auth/apps/auth/routers/auth.py:169
+msgid "Invalid email or password"
+msgstr "Niepoprawny email lub hasło"
+
+#: auth/apps/auth/routers/register.py:90
+msgid "A user with the same email address already exists."
+msgstr "Użytkownik z tym adresem email już istnieje."
+
+#: auth/dependencies/auth.py:78
+msgid "response_type is missing"
+msgstr "response_type is missing"
+
+#: auth/dependencies/auth.py:37
+msgid "client_id is missing"
+msgstr "client_id is missing"
+
+#: auth/dependencies/auth.py:43
+msgid "Unknown client"
+msgstr "Unknown client"
+
+#: auth/apps/auth/routers/auth.py:351 auth/dependencies/auth.py:54
+msgid "redirect_uri is missing"
+msgstr "redirect_uri is missing"
+
+#: auth/dependencies/auth.py:146
+msgid "scope is missing"
+msgstr "scope is missing"
+
+#: auth/dependencies/auth.py:157
+msgid "scope should contain \"openid\""
+msgstr "scope should contain \"openid\""
+
+#: auth/dependencies/auth.py:204
+msgid "screen should either be \"login\" or \"register\""
+msgstr "screen should either be \"login\" or \"register\""
+
+#: auth/dependencies/auth.py:264
+msgid "Invalid login session"
+msgstr "Nieprawidłowa sesja logowania"
+
+#: auth/templates/auth/authorize.html:3 auth/templates/auth/authorize.html:5
+msgid "Authorize"
+msgstr "Autoryzuj"
+
+#: auth/templates/auth/register.html:40
+msgid "I already have an account"
+msgstr "Mam już konto"
+
+#: auth/templates/auth/login.html:52 auth/templates/auth/register.html:9
+#: auth/templates/auth/register.html:17 auth/templates/auth/register.html:42
+msgid "Sign up"
+msgstr "Załóż konto"
+
+#: auth/apps/auth/routers/auth.py:328
+msgid "The user denied access to their data."
+msgstr "Użytkownik odmówił dostępu do swoich danych."
+
+#: auth/dependencies/auth.py:177
+msgid "prompt should either be \"none\", \"login\" or \"register\""
+msgstr "prompt should either be \"none\", \"login\" or \"register\""
+
+#: auth/dependencies/auth.py:186
+msgid "User is not logged in"
+msgstr "Użytkownik nie jest zalogowany"
+
+#: auth/dependencies/auth.py:324
+msgid "User consent is required for this scope"
+msgstr "W tym zakresie wymagana jest zgoda użytkownika"
+
+#: auth/templates/auth/consent.html:5
+msgid "Consent"
+msgstr "Zgoda"
+
+#: auth/templates/auth/consent.html:7
+msgid "%(name)s wants to access your account"
+msgstr "%(name)s chce uzyskać dostęp do Twojego konta"
+
+#: auth/templates/auth/consent.html:12
+msgid "This will allow %(name)s to:"
+msgstr "Umożliwi to %(name)s:"
+
+#: auth/apps/auth/forms/auth.py:16
+msgid "Deny"
+msgstr "Odmów"
+
+#: auth/apps/auth/forms/auth.py:15
+msgid "Allow"
+msgstr "Zezwól"
+
+#: auth/apps/auth/routers/reset.py:47
+msgid "Check your inbox! If an account associated with this email address exists in our system, you'll receive a link to reset your password."
+msgstr "Sprawdź swoją skrzynkę odbiorczą! Jeśli konto powiązane z tym adresem e-mail istnieje w naszym systemie, otrzymasz link do zresetowania hasła."
+
+#: auth/apps/auth/routers/reset.py:75
+msgid "The reset password token is missing."
+msgstr "The reset password token is missing."
+
+#: auth/apps/auth/routers/reset.py:91
+msgid "The reset password token is invalid or expired."
+msgstr "Token resetowania hasła jest nieprawidłowy lub wygasł."
+
+#: auth/templates/auth/forgot_password.html:5
+#: auth/templates/auth/forgot_password.html:7
+msgid "Forgot password"
+msgstr "Zapomniałeś hasła"
+
+#: auth/templates/auth/forgot_password.html:17
+msgid "I remember my password"
+msgstr "Pamiętam moje hasło"
+
+#: auth/templates/auth/forgot_password.html:19
+msgid "Send me a reset link"
+msgstr "Wyślij resetujący link"
+
+#: auth/templates/auth/login.html:28
+msgid "I forgot my password"
+msgstr "Zapomniałem hasła"
+
+#: auth/templates/auth/reset_password.html:5
+#: auth/templates/auth/reset_password.html:7
+msgid "Reset password"
+msgstr "Reset hasła"
+
+#: auth/apps/auth/forms/password.py:14 auth/apps/auth/forms/reset.py:15
+msgid "New password"
+msgstr "Nowe hasło"
+
+#: auth/templates/auth/reset_password.html:18
+msgid "Reset my password"
+msgstr "Resetuj hasło"
+
+#: auth/dependencies/auth.py:60
+msgid "redirect_uri is not authorized for this client"
+msgstr "redirect_uri is not authorized for this client"
+
+#: auth/dependencies/auth.py:110
+msgid "request parameter is not supported"
+msgstr "request parameter is not supported"
+
+#: auth/dependencies/auth.py:227
+msgid "Unsupported code_challenge_method"
+msgstr "Unsupported code_challenge_method"
+
+#: auth/forms.py:271
+msgid "This phone number is invalid."
+msgstr "Ten numer telefonu jest nieprawidłowy."
+
+#: auth/forms.py:269
+msgid "The country code is missing."
+msgstr "Brak kodu kraju."
+
+#: auth/dependencies/auth.py:86
+msgid "response_type is invalid"
+msgstr "response_type is invalid"
+
+#: auth/dependencies/auth.py:128
+msgid "nonce parameter is required for this response_type"
+msgstr "nonce parameter is required for this response_type"
+
+#: auth/templates/macros/branding.html:3
+msgid "Powered and secured by"
+msgstr "Tworzony i zabezpieczany przez"
+
+#: auth/templates/auth/login.html:51
+msgid "Don't have an account?"
+msgstr "Nie masz konta?"
+
+#: auth/templates/auth/logout.html:3 auth/templates/auth/logout.html:5
+msgid "Sign out"
+msgstr "Wyloguj się"
+
+#: auth/forms.py:290
+msgid "Address line 1"
+msgstr "Adres (linia 1)"
+
+#: auth/forms.py:295
+msgid "Address line 2"
+msgstr "Adres (linia 2)"
+
+#: auth/forms.py:301
+msgid "Postal code"
+msgstr "Kod pocztowy"
+
+#: auth/forms.py:306
+msgid "City"
+msgstr "Miasto"
+
+#: auth/forms.py:311
+msgid "State"
+msgstr "Województwo"
+
+#: auth/forms.py:317
+msgid "Country"
+msgstr "Kraj"
+
+#: auth/forms.py:66
+msgid "CSRF failed."
+msgstr "CSRF failed."
+
+#: auth/apps/auth/routers/oauth.py:99
+msgid "Missing authorization code."
+msgstr "Missing authorization code."
+
+#: auth/apps/auth/routers/oauth.py:111
+msgid "Invalid OAuth session."
+msgstr "Invalid OAuth session."
+
+#: auth/apps/auth/routers/oauth.py:127
+msgid "An error occurred while getting the access token."
+msgstr "An error occurred while getting the access token."
+
+#: auth/apps/auth/routers/oauth.py:165
+msgid "Your account is inactive."
+msgstr "Twoje konto jest nieaktywne."
+
+#: auth/dependencies/oauth.py:24
+msgid "Unknown tenant"
+msgstr "Unknown tenant"
+
+#: auth/dependencies/oauth.py:44
+msgid "Invalid login session."
+msgstr "Nieprawidłowa sesja logowania."
+
+#: auth/dependencies/oauth.py:60
+msgid "Unknown OAuth provider"
+msgstr "Nieznany dostawca OAuth"
+
+#: auth/templates/auth/login.html:15
+msgid "Sign in with %(provider)s"
+msgstr "Zaloguj się przez %(provider)s"
+
+#: auth/templates/auth/register.html:7 auth/templates/auth/register.html:15
+#: auth/templates/auth/register.html:35
+msgid "Finalize sign up"
+msgstr "Zakończ rejestrację"
+
+#: auth/templates/auth/register.html:54
+msgid "Sign up with %(provider)s"
+msgstr "Zarejestruj się przez %(provider)s"
+
+#: auth/apps/auth/routers/register.py:54
+msgid "Registration is disabled"
+msgstr "Rejestracja jest wyłączona"
+
+#: auth/apps/auth/forms/password.py:9
+msgid "Old password"
+msgstr ""
+
+#: auth/apps/auth/forms/password.py:19
+msgid "Confirm new password"
+msgstr ""
+
+#: auth/apps/auth/routers/dashboard.py:128
+msgid "A user with this email address already exists."
+msgstr ""
+
+#: auth/apps/auth/routers/dashboard.py:80
+msgid "Your profile has successfully been updated."
+msgstr ""
+
+#: auth/apps/auth/routers/dashboard.py:209
+msgid "Old password is invalid."
+msgstr ""
+
+#: auth/apps/auth/routers/dashboard.py:217
+msgid "Passwords don't match."
+msgstr ""
+
+#: auth/apps/auth/routers/dashboard.py:224
+msgid "Your password has been changed successfully."
+msgstr ""
+
+#: auth/apps/auth/routers/oauth.py:149
+msgid "An error occurred while querying the provider API. Original error message: %(message)s"
+msgstr ""
+
+#: auth/dependencies/auth.py:277
+msgid "Missing login session. You should return to %(tenant)s and try to login again"
+msgstr ""
+
+#: auth/templates/auth/dashboard/index.html:7
+#: auth/templates/auth/dashboard/index.html:10
+#: auth/templates/auth/dashboard/sidebar.html:31
+msgid "Profile"
+msgstr ""
+
+#: auth/templates/auth/dashboard/index.html:43
+msgid "Update profile"
+msgstr ""
+
+#: auth/templates/auth/dashboard/password.html:10
+#: auth/templates/auth/dashboard/password.html:23
+msgid "Change password"
+msgstr ""
+
+#: auth/templates/auth/dashboard/sidebar.html:16
+msgid "Back to application"
+msgstr ""
+
+#. Shown in a small badge over a button. Keep it extra-short.
+#. 
+#. https://s3.eu-west-1.amazonaws.com/po-pub/i/oI8dlw8Cf6lS4C4fv0FByxXe.png
+#: auth/templates/auth/login.html:38
+msgid "Used last"
+msgstr ""
+
+#: auth/services/password.py:43
+msgid "Password is not strong enough."
+msgstr ""
+
+#: auth/templates/macros/forms.html:307
+msgid "Weak"
+msgstr ""
+
+#: auth/templates/macros/forms.html:309
+msgid "Acceptable"
+msgstr ""
+
+#: auth/templates/macros/forms.html:311
+msgid "Good"
+msgstr ""
+
+#: auth/services/password.py:26
+msgid "Password must be at least %(min)d characters long."
+msgstr ""
+
+#: auth/services/password.py:34
+msgid "Password must be at most %(max)d characters long."
+msgstr ""
+
+#: auth/apps/auth/forms/profile.py:17
+msgid "Confirm your password"
+msgstr ""
+
+#: auth/apps/auth/forms/verify_email.py:8
+msgid "Verification code"
+msgstr ""
+
+#: auth/apps/auth/routers/auth.py:239
+msgid "The verification code is invalid. Please check that you have entered it correctly. If the code was copied and pasted, ensure it has not expired. If it has been more than one hour, please request a new verification code."
+msgstr ""
+
+#: auth/apps/auth/routers/dashboard.py:117
+msgid "Your password is invalid."
+msgstr ""
+
+#: auth/apps/auth/routers/dashboard.py:167
+msgid "The verification code is invalid. Please check that you have entered it correctly. If the code was copied and pasted, ensure it has not expired. If it has been more than one hour, start over the email change process."
+msgstr ""
+
+#: auth/templates/auth/verify_email.html:6
+#: auth/templates/auth/verify_email.html:8
+msgid "Verify your email"
+msgstr ""
+
+#: auth/templates/auth/verify_email.html:29
+msgid "To complete the email verification process, please check your email for the verification code. Enter the code below to verify your email address."
+msgstr ""
+
+#: auth/templates/auth/verify_email.html:33
+msgid "Resend the code"
+msgstr ""
+
+#: auth/templates/auth/dashboard/email/verify.html:47
+#: auth/templates/auth/verify_email.html:34
+msgid "Verify my email"
+msgstr ""
+
+#: auth/templates/auth/dashboard/index.html:12
+msgid "Email"
+msgstr ""
+
+#: auth/templates/auth/dashboard/index.html:13
+msgid "Manage your email address to receive important updates and notifications."
+msgstr ""
+
+#: auth/templates/auth/dashboard/index.html:23
+msgid "Change"
+msgstr ""
+
+#: auth/templates/auth/dashboard/index.html:29
+msgid "Profile information"
+msgstr ""
+
+#: auth/templates/auth/dashboard/index.html:30
+msgid "Manage your profile information."
+msgstr ""
+
+#: auth/templates/auth/dashboard/email/change.html:21
+#: auth/templates/auth/dashboard/email/verify.html:45
+msgid "Cancel"
+msgstr ""
+
+#: auth/templates/auth/dashboard/email/change.html:23
+msgid "Change email address"
+msgstr ""
+
+#: auth/templates/auth/dashboard/email/verify.html:30
+msgid "To complete the email change, please check your email for the verification code. Enter the code below to verify your new email address."
+msgstr ""
+
