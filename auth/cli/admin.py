@@ -56,8 +56,8 @@ def add_commands(app: typer.Typer) -> typer.Typer:
             )
             raise typer.Exit(code=1) from e
         except UserAlreadyExistsError as e:
-            typer.secho("User already exists", fg="red")
-            raise typer.Exit(code=1) from e
+            typer.secho("User already exists", fg="yellow")
+            return typer.Exit(code=1)
         except InvalidPasswordError as e:
             typer.secho(
                 f"Invalid password: {', '.join(map(str, e.messages))}",
