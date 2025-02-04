@@ -150,7 +150,8 @@ dependencies = [
   "zxcvbn-rs-py==0.1.1 ; python_version >= '3.12' and python_version < '3.13'",
   "coverage[toml]==7.6.10",
   "auth-client @ file:///./packages/auth_client-0.1.0-py3-none-any.whl",
-  "fastapi (>=0.115.8,<0.116.0)"
+  "fastapi (>=0.115.8,<0.116.0)",
+  "httpx (==0.22.0)"
 ]
 
 [project.scripts]
