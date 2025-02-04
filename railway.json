@@ -1,14 +1,16 @@
 {
-    "$schema": "https://railway.com/railway.schema.json",
-    "build": {
-      "nixpacksPlan": {
-        "providers": ["python", "node"],
-        "phases": {
-          "install": {
-            "dependsOn": ["setup"],
-            "cmds": ["python -m venv --copies /opt/venv && . /opt/venv/bin/activate && pip install poetry==$NIXPACKS_POETRY_VERSION && poetry install --no-interaction --no-ansi"]
-          }
+  "$schema": "https://railway.com/railway.schema.json",
+  "build": {
+    "nixpacksPlan": {
+      "providers": ["python", "node"],
+      "phases": {
+        "install": {
+          "dependsOn": ["setup"],
+          "cmds": [
+            "python -m venv --copies /opt/venv && . /opt/venv/bin/activate && pip install poetry==$NIXPACKS_POETRY_VERSION && poetry install --no-interaction --no-ansi"
+          ]
         }
       }
     }
   }
+}
