@@ -143,6 +143,11 @@ class Settings(BaseSettings):
     password_min_length: int = 8
     password_min_score: int = Field(ge=0, le=4, default=3)
 
+    # Posthog settings
+    posthog_host: str = "https://us.i.posthog.com"
+    posthog_web_host: str = "https://us.posthog.com"
+    posthog_api_key: str | None = None
+    
     model_config = SettingsConfigDict(
         env_file=".env", extra="ignore", secrets_dir=initial_settings.secrets_dir
     )
